@@ -1,0 +1,313 @@
+/* =========================
+   RESET & BASE
+========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+/* =========================
+   THEME SYSTEM
+========================= */
+
+body.dark {
+  background: radial-gradient(circle at top, #0b0f1a, #05060a 70%);
+  color: #e6e6eb;
+}
+
+body.light {
+  background: radial-gradient(circle at top, #ffffff, #f1f3f8 70%);
+  color: #121212;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 1000;
+  backdrop-filter: blur(20px);
+  background: rgba(10, 10, 20, 0.45);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+body.light #navbar {
+  background: rgba(255,255,255,0.6);
+}
+
+#navbar ul {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+}
+
+#navbar a {
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: inherit;
+  position: relative;
+  opacity: 0.85;
+}
+
+#navbar a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #00ffff, #7fffda);
+  transition: width 0.4s ease;
+}
+
+#navbar a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   DARK / LIGHT TOGGLE
+========================= */
+
+#modeToggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2000;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #00ffff, #7fffda);
+  color: #000;
+  font-size: 1.3rem;
+  box-shadow:
+    0 10px 30px rgba(0,255,255,0.3),
+    inset 0 0 10px rgba(255,255,255,0.4);
+  transition: transform 0.4s ease;
+}
+
+#modeToggle:hover {
+  transform: scale(1.1) rotate(8deg);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 8vw;
+  position: relative;
+  perspective: 1600px;
+}
+
+/* subtle divider */
+.section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+}
+
+/* =========================
+   BOOK (CORE CONCEPT)
+========================= */
+
+.book {
+  max-width: 1100px;
+  width: 100%;
+  padding: 80px;
+  border-radius: 28px;
+  background:
+    linear-gradient(145deg,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.01)
+    );
+  box-shadow:
+    0 40px 120px rgba(0,0,0,0.45),
+    inset 0 0 0 1px rgba(255,255,255,0.08);
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateY(0deg);
+}
+
+/* light version */
+body.light .book {
+  background:
+    linear-gradient(145deg,
+      rgba(255,255,255,0.9),
+      rgba(240,240,250,0.7)
+    );
+  box-shadow:
+    0 40px 120px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1 {
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+p {
+  max-width: 720px;
+  font-size: 1.05rem;
+  opacity: 0.85;
+}
+
+/* =========================
+   PROFILE IMAGE
+========================= */
+
+.profile-img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 40px 0;
+  border: 4px solid rgba(0,255,255,0.7);
+  box-shadow:
+    0 0 40px rgba(0,255,255,0.35),
+    0 0 120px rgba(0,255,255,0.15);
+  transition: transform 0.6s ease;
+}
+
+.profile-img:hover {
+  transform: translateZ(40px) scale(1.05);
+}
+
+/* =========================
+   LESSON CARDS
+========================= */
+
+.lesson-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.card {
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.04);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.card:hover {
+  transform: translateY(-15px) translateZ(30px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 50px;
+}
+
+.gallery-img {
+  width: 100%;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.08) rotateZ(1deg);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.4);
+}
+
+/* =========================
+   TESTIMONIALS
+========================= */
+
+.testimonial-cards {
+  display: grid;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.testimonial {
+  padding: 40px;
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
+  font-style: italic;
+}
+
+/* =========================
+   CANVAS
+========================= */
+
+#backgroundCanvas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .book {
+    padding: 50px 30px;
+  }
+  #navbar ul {
+    gap: 20px;
+  }
+}
