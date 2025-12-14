@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - نورا الحداد</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r161/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/ScrollTrigger.min.js"></script>
+</head>
+<body class="dark">
+
+<!-- Navbar -->
+<nav id="navbar">
+  <ul>
+    <li><a href="#intro">الرئيسية</a></li>
+    <li><a href="#lessons">الدروس</a></li>
+    <li><a href="#gallery">معرض الصور</a></li>
+    <li><a href="#testimonials">آراء الطلاب</a></li>
+    <li><a href="#contact">اتصل بنا</a></li>
+  </ul>
+</nav>
+
+<!-- Dark/Light Mode Toggle -->
+<button id="modeToggle">🌞</button>
+
+<!-- 3D Background Canvas -->
+<canvas id="backgroundCanvas"></canvas>
+
+<!-- Main Content -->
+<div id="content">
+
+  <!-- Intro Section -->
+  <section class="section" id="intro">
+    <div class="book">
+      <h1>الأستاذة نورا الحداد</h1>
+      <p>معلمة اللغة الفرنسية | خبرة في التدريس والإبداع</p>
+      <img src="file.enc (1).jpg" class="profile-img" alt="Nora Haddad">
+      <div class="icons">📖 ✏️ 🖍️</div>
+    </div>
+  </section>
+
+  <!-- Lessons Section -->
+  <section class="section" id="lessons">
+    <div class="book">
+      <h2>الدروس والأنشطة</h2>
+      <div class="lesson-cards">
+        <div class="card">
+          <img src="lesson1.jpg" alt="">
+          <h3>مستوى مبتدئ</h3>
+          <p>تعليم الحروف والكلمات الأساسية.</p>
+        </div>
+        <div class="card">
+          <img src="lesson2.jpg" alt="">
+          <h3>مستوى متوسط</h3>
+          <p>تطوير مهارات المحادثة والفهم.</p>
+        </div>
+        <div class="card">
+          <img src="lesson3.jpg" alt="">
+          <h3>مستوى متقدم</h3>
+          <p>القراءة والكتابة بشكل احترافي.</p>
+        </div>
+        <!-- تكرار أكثر من 5-6 Cards لتكبير الحجم -->
+        <div class="card">
+          <img src="lesson4.jpg" alt="">
+          <h3>تمارين تفاعلية</h3>
+          <p>ألعاب وأنشطة تعليمية ممتعة.</p>
+        </div>
+        <div class="card">
+          <img src="lesson5.jpg" alt="">
+          <h3>مشاريع الطلاب</h3>
+          <p>عرض الأعمال المميزة للطلاب.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section" id="gallery">
+    <div class="book">
+      <h2>معرض الصور</h2>
+      <div class="gallery-grid">
+        <img src="Alphabets in French.jpeg" class="gallery-img" alt="">
+        <img src="Arch of Triumph, Paris Wallpaper.jpeg" class="gallery-img" alt="">
+        <img src="Vakanties.jpeg" class="gallery-img" alt="">
+        <img src="/نورا/file.enc (1).jpg" class="gallery-img" alt="">
+        <img src="افضل خلفية  لي هاتف.jpeg" class="gallery-img" alt="">
+        <img src="img6.jpg" class="gallery-img" alt="">
+        <img src="img7.jpg" class="gallery-img" alt="">
+        <img src="img8.jpg" class="gallery-img" alt="">
+        <!-- تكرار الصور لتكبير حجم الملف -->
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="book">
+      <h2>اتصل بنا</h2>
+      <p>للحجز أو الاستفسار، تواصل معنا عبر البريد الإلكتروني أو الهاتف.</p>
+      <div class="contact-info">
+        <p>Email: info@nora.com</p>
+        <p>Phone: ⁦+20 10 08576822⁩</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
